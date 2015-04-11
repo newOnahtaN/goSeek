@@ -30,7 +30,7 @@
     EventSource *sourceMarco = [EventSource eventSourceWithURL:serverURL];
     [sourceMarco addEventListener:@"MARCO" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
-        AudioServicesPlaySystemSound (1003);
+        AudioServicesPlaySystemSound (1005);
     }];
     
     EventSource *sourceClose = [EventSource eventSourceWithURL:serverURL];
