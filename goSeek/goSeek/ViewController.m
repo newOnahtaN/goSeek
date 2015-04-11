@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"Hello World!");
     
-    NSURL *serverURL = [NSURL URLWithString:@"http://localhost:5000/polo"];
+    NSURL *serverURL = [NSURL URLWithString:@"http://45.55.188.238:5000/polo"];
     EventSource *sourceCountDown = [EventSource eventSourceWithURL:serverURL];
     [sourceCountDown addEventListener:@"COUNTDOWN" handler:^(Event *e) {
         NSLog(@"%@: %@", e.event, e.data);
@@ -39,22 +39,23 @@
     
     
     // Request Roomcode
-    NSURLRequest *requestRoomCode = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/roomcode"]];
+    NSURLRequest *requestRoomCode = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/roomcode"]];
+    
     
     NSURLConnection *connRoomCode = [[NSURLConnection alloc] initWithRequest:requestRoomCode delegate:self];
     
     // Request Marco
-    NSURLRequest *requestMarco = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/marco"]];
+    NSURLRequest *requestMarco = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/marco"]];
     
     NSURLConnection *connMarco = [[NSURLConnection alloc] initWithRequest:requestMarco delegate:self];
     
     // Request CountDown
-    NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/countdown"]];
+    NSURLRequest *requestCountDown = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/countdown"]];
     
     NSURLConnection *connCountDown = [[NSURLConnection alloc] initWithRequest:requestCountDown delegate:self];
     
     // Request Close
-    NSURLRequest *requestClose = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:5000/close"]];
+    NSURLRequest *requestClose = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://45.55.188.238:5000/close"]];
     
     NSURLConnection *connClose = [[NSURLConnection alloc] initWithRequest:requestClose delegate:self];
     
@@ -82,7 +83,7 @@
         _roomcode = temp;
         NSLog(_roomcode);
     }
-    NSLog(@"did recieve data\n");
+    NSLog(@"\nDid recieve data\n");
     
 }
 
